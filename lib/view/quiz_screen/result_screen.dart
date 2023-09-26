@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_sas/view/quiz_screen/quiz_screen.dart';
 
 import '../../questions/questions.dart';
 
@@ -54,6 +55,33 @@ class ResultScreen extends StatelessWidget {
               ),
             ],
           ),
+          Container(
+              height: 70,
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.white10,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: Colors.white24,
+                ),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextButton(
+                  child: Text("Restart Quiz",style: TextStyle(color: Colors.white,fontSize: 20),),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (_) => QuizScreen(),
+                        ),
+                      );
+                    },
+                  )
+                  ),
+                ],
+              ),
+            )
         ],
       ),
     );
